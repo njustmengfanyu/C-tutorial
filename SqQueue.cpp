@@ -4,6 +4,7 @@
  * Description: Sequence Queue(Circular Queue)
  */
 #include <iostream>
+
 using namespace std;
 
 #define MaxSize 10
@@ -30,7 +31,7 @@ bool EnQueue(SqQueue &Q, int x) {
         return false;
     } else {
         Q.data[Q.rear] = x;
-        Q.rear = (Q.rear + 1) % MaxSize;
+        Q.rear = (Q.rear + 1) % MaxSize; // caution! : compare with Stack 
         return true;
     }
 }
@@ -40,7 +41,7 @@ bool Dequeue(SqQueue &Q, int &x) {
         return false;
     } else {
         x = Q.data[Q.front];
-        Q.front = (Q.front + 1) % MaxSize;
+        Q.front = (Q.front + 1) % MaxSize; // caution! compare with Stack
         return true;
     }
 }
